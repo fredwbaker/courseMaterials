@@ -281,6 +281,7 @@ console.log(ageFred, ageGeorge, averageAge);
 
 // //SECOND CODING CHALLENGE!!
 
+
 // let massMark = 78;
 // let heightMark = 1.69;
 // let massJohn = 92;
@@ -304,3 +305,84 @@ console.log(ageFred, ageGeorge, averageAge);
 // // let markHigherBMI = (markBMI>johnBMI);
 
 // // console.log(markHigherBMI);
+
+// type conversion (manually change between types- strings and numbers)
+//type coercion (js automatically changes between types behind the scenes)
+
+// //TYPE CONVERSION:
+// const inputYear = '1979';
+// console.log(inputYear);//string
+// //this won't log as a number because it is a string
+// console.log(inputYear + 18);//string + number
+// //can convert a string to a number using the number function:
+// console.log(Number(inputYear));//number, this DOESN'T CHANGE the original string
+// console.log(inputYear + 18);//this is still a string plus number
+// console.log(Number(inputYear) + 18);//this is a number plus a number
+
+// //what if we try to convert something that can't be a number?
+// console.log(Number('fred'));//produces NaN Not a Number
+// console.log(typeof NaN);// Not a Number IS a type of number, but undefinable
+
+// console.log(String(23)); //The String function converts numbers to strings
+
+
+// //JS automatically does Type Coercion on its own as well
+// //TYPE COERCION:
+// console.log('I am' + 23 + 'years old');//this automatically creates coercion that converts the number to a string
+// console.log('I am' + '23' + 'years old');//this is equivalent to the one above
+// //this also happens with template literals: numbers are automatically converted to strings
+
+// console.log('23' - '10' - 3); //in this case, the minus sign automatically converts these to numbers
+// console.log('23' + '10' + 3); //the + preserves the string and concatenates these values: 23103
+// console.log('23' * '2'); //converted to numbers
+// console.log('23'/'2'); //also converted to numbers
+// console.log('23'>'2'); //also converted to numbers
+
+// let n = '1' + 1; //this will be a string: 11
+// n = n - 1; //this converts the string 11 to a number 11 and subtracts 1
+// console.log(n); //this outputs 10
+
+// //type coercion is good IF you understand it, but can mess things up if you don't know how it works.
+// //2+3+4+'5' produces a string value: output 95 (string)
+// // '10' - '4' - '3' - 2 + '5' produces a number all the way until the plus sign, THEN makes a string: output 15 (string)
+
+//TRUTHY and FALSY Values (for booleans)
+
+//falsy values are not actually false, but WILL become false when you try to convert them to a boolean
+//There a FIVE (5) falsy values: 0, '', undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(''));
+
+//truthy values aren't actually true, but will convert to true when we convert them to boolean
+console.log(Boolean('Fred'));
+console.log(Boolean({}));
+
+//In practice, the conversion of type to booleans is automatic. Jonas has never done this in practice!
+
+const money =0;//change this to any other number and you get the if statement
+
+if(money){//money is a number, BUT js tries to convert it to a boolean (true/false) using the Coercion rules. Shows the else. 
+    console.log("Don't spend it all");
+}else {
+    console.log("You should get a job");
+}
+
+let height;//height is undefined
+if(height){//undefined is a falsy value, so when variable is not defined, then it triggers false
+    console.log(`Yay! Height is defined!`);  
+}else {
+    console.log(`height is UNDEFINED!`);
+}
+
+let height = 0;//height is 0
+if(height){//0 is a falsy value, so when variable is not defined, then it triggers false
+    console.log(`Yay! Height is defined!`);  
+}else {
+    console.log(`height is UNDEFINED!`);
+}
+
+//we can fix this issue using logical operators, discussed later
+
+
