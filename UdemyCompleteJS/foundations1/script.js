@@ -197,30 +197,110 @@ console.log(ageFred, ageGeorge, averageAge);
 
 // console.log(markHigherBMI);
 
-const firstName = 'Fred';
-const job = 'Instructional Designer & Front End Web Developer';
-const birthYear = 1979;
-const year = 2020;
+// const firstName = 'Fred';
+// const job = 'Instructional Designer & Front End Web Developer';
+// const birthYear = 1979;
+// const year = 2020;
 
-//this leaves odd spaces, so we need template literals (yay!)
-const fred = "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+// //this leaves odd spaces, so we need template literals (yay!)
+// const fred = "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
 
-console.log(fred);
+// console.log(fred);
 
-//using the ` (backtick) you can put everything in a sentence, with ${} to enclose the variables- Template Literals!
-const frednew = `I'm ${firstName}, a ${year-birthYear}  year old ${job}!`;
-console.log(frednew);
+// //using the ` (backtick) you can put everything in a sentence, with ${} to enclose the variables- Template Literals!
+// const frednew = `I'm ${firstName}, a ${year-birthYear}  year old ${job}!`;
+// console.log(frednew);
 
-//can just use ` instead of quotes in all places
-console.log(`This is a regular string with backticks`);
+// //can just use ` instead of quotes in all places
+// console.log(`This is a regular string with backticks`);
 
-//can also use it to write new lines: old way
+// //can also use it to write new lines: old way
 
-console.log('string with a \n\
-multiple \n\
-line sentence');
+// console.log('string with a \n\
+// multiple \n\
+// line sentence');
 
-console.log(`string with a
-multiple
-line sentence
-using backticks`);
+// console.log(`string with a
+// multiple
+// line sentence
+// using backticks`);
+
+
+
+
+
+//make decisions with code using if/else statements
+//how long before able to drive?
+
+// const age = 14;
+
+
+//if condition in if() is true, it executes the code, else() it executes this code. Common to place the actual element in the if statement, rather than making a variable for it. It needs to be true/false boolean
+
+// if(age >= 16) {
+//     console.log(`Sarah can get her driver's license! 🚗 YAY!`);
+// } else {
+//     const yearsLeft = 16 - age;
+//     console.log(`Sarah only has ${yearsLeft} years left to get her license!! 🚕`);
+// }
+
+//if, else structures are called control structures
+
+
+//if you declare a variable INSIDE a block, such as an if,else statement, it WON'T be accessible outside of the block!
+
+// const birthYear = 1979;
+
+// if(birthYear <= 2000) {
+//     let century = 20;
+// } else {
+//     let century = 21;
+// }
+
+//this won't log: 
+// console.log(century);
+
+//You can declare century as an empty variable outside of the block, so it lives outside of the block, and will be declared from within the block (this is cool!)
+
+// const birthYear = 1979;
+
+// //declare century as an empty variable
+// let century;
+
+// if(birthYear <= 2000) {
+//     century = 20;
+//     console.log(`This birthdate is in the ${century}th century!`);
+// } else {
+//     century = 21;
+//     console.log(`This birthdate is in the ${century}st century!`);
+// }
+
+// //this WILL log: 
+// console.log(century);
+
+
+// //SECOND CODING CHALLENGE!!
+
+// let massMark = 78;
+// let heightMark = 1.69;
+// let massJohn = 92;
+// let heightJohn = 1.95;
+
+// let markBMI = (massMark / (heightMark **2));
+
+// let johnBMI = (massJohn / (heightJohn **2));
+
+// if(markBMI > johnBMI) {
+//     console.log(`Mark's BMI is ${markBMI}, which is higher than John's BMI of ${johnBMI}!`);
+// } else if (markBMI === johnBMI) {
+//     console.log(`Mark's BMI is ${markBMI}, which is equal to John's BMI of ${johnBMI}!`); 
+// } else {
+//     console.log(`John's BMI is ${johnBMI}, which is higher than Mark's BMI of ${markBMI}!`);
+// }
+
+
+// // console.log(markBMI, johnBMI);
+
+// // let markHigherBMI = (markBMI>johnBMI);
+
+// // console.log(markHigherBMI);
