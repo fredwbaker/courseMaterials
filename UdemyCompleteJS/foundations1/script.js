@@ -150,38 +150,77 @@ console.log(ageFred, ageGeorge, averageAge);
 
 //test commit for new repo
 
-let massMark = 78;
-let heightMark = 1.69;
-let massJohn = 92;
-let heightJohn = 1.95;
+// let massMark = 78;
+// let heightMark = 1.69;
+// let massJohn = 92;
+// let heightJohn = 1.95;
 
-let markBMI = (massMark / (heightMark **2));
+// let markBMI = (massMark / (heightMark **2));
 
-let johnBMI = (massJohn / (heightJohn **2));
-
-
-console.log(markBMI, johnBMI);
+// let johnBMI = (massJohn / (heightJohn **2));
 
 
-
-let markHigherBMI = (markBMI>johnBMI);
-
-console.log(markHigherBMI);
+// console.log(markBMI, johnBMI);
 
 
-massMark = 95;
-heightMark = 1.88;
-massJohn = 85;
-heightJohn = 1.76;
 
-markBMI = (massMark / (heightMark **2));
+// let markHigherBMI = (markBMI>johnBMI);
 
-johnBMI = (massJohn / (heightJohn **2));
+// console.log(markHigherBMI);
 
 
-console.log(markBMI, johnBMI);
+// massMark = 95;
+// heightMark = 1.88;
+// massJohn = 85;
+// heightJohn = 1.76;
+
+// markBMI = massMark / heightMark **2;
+
+// johnBMI = massJohn / heightJohn **2;
+
+// johnBMI = massJohn / (heightJohn * heightJohn);
 
 
-markHigherBMI = (markBMI>johnBMI);
 
-console.log(markHigherBMI);
+// console.log(markBMI, johnBMI);
+
+
+// markHigherBMI = (markBMI>johnBMI);
+
+// console.log(markHigherBMI);
+
+// //can also do it this way:
+
+// johnBMI = massJohn / (heightJohn * heightJohn);
+
+// markBMI = massMark / (heightMark * heightMark);
+
+// console.log(markHigherBMI);
+
+const firstName = 'Fred';
+const job = 'Instructional Designer & Front End Web Developer';
+const birthYear = 1979;
+const year = 2020;
+
+//this leaves odd spaces, so we need template literals (yay!)
+const fred = "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+
+console.log(fred);
+
+//using the ` (backtick) you can put everything in a sentence, with ${} to enclose the variables- Template Literals!
+const frednew = `I'm ${firstName}, a ${year-birthYear}  year old ${job}!`;
+console.log(frednew);
+
+//can just use ` instead of quotes in all places
+console.log(`This is a regular string with backticks`);
+
+//can also use it to write new lines: old way
+
+console.log('string with a \n\
+multiple \n\
+line sentence');
+
+console.log(`string with a
+multiple
+line sentence
+using backticks`);
