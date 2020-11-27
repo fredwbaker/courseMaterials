@@ -351,38 +351,277 @@ console.log(ageFred, ageGeorge, averageAge);
 //falsy values are not actually false, but WILL become false when you try to convert them to a boolean
 //There a FIVE (5) falsy values: 0, '', undefined, null, NaN
 
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean(''));
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean(''));
 
-//truthy values aren't actually true, but will convert to true when we convert them to boolean
-console.log(Boolean('Fred'));
-console.log(Boolean({}));
+// //truthy values aren't actually true, but will convert to true when we convert them to boolean
+// console.log(Boolean('Fred'));
+// console.log(Boolean({}));
 
-//In practice, the conversion of type to booleans is automatic. Jonas has never done this in practice!
+// //In practice, the conversion of type to booleans is automatic. Jonas has never done this in practice!
 
-const money =0;//change this to any other number and you get the if statement
+// const money =0;//change this to any other number and you get the if statement
 
-if(money){//money is a number, BUT js tries to convert it to a boolean (true/false) using the Coercion rules. Shows the else. 
-    console.log("Don't spend it all");
-}else {
-    console.log("You should get a job");
-}
+// if(money){//money is a number, BUT js tries to convert it to a boolean (true/false) using the Coercion rules. Shows the else. 
+//     console.log("Don't spend it all");
+// }else {
+//     console.log("You should get a job");
+// }
 
-let height;//height is undefined
-if(height){//undefined is a falsy value, so when variable is not defined, then it triggers false
-    console.log(`Yay! Height is defined!`);  
-}else {
-    console.log(`height is UNDEFINED!`);
-}
+// let height;//height is undefined
+// if(height){//undefined is a falsy value, so when variable is not defined, then it triggers false
+//     console.log(`Yay! Height is defined!`);  
+// }else {
+//     console.log(`height is UNDEFINED!`);
+// }
 
-let height = 0;//height is 0
-if(height){//0 is a falsy value, so when variable is not defined, then it triggers false
-    console.log(`Yay! Height is defined!`);  
-}else {
-    console.log(`height is UNDEFINED!`);
-}
+// let height = 0;//height is 0
+// if(height){//0 is a falsy value, so when variable is not defined, then it triggers false
+//     console.log(`Yay! Height is defined!`);  
+// }else {
+//     console.log(`height is UNDEFINED!`);
+// }
 
-//we can fix this issue using logical operators, discussed later
+// //we can fix this issue using logical operators, discussed later
 
 
+// const coronaVirus;
+
+// if(coronaVirus){
+//     console.log(`Stay home and get better!`);
+// } else {
+//     console.log(`wear your mask, wash your hands, distance yourself, and stay safe!`)
+// // }
+
+// const age = 18;
+// // === means both sides have to be strictly equal
+// if(age === 18) console.log(`You just became an adult!`);
+//loose equality operator ==  this is generally avoided in favor of the strict equality operator ===
+//'18' == 18 will be true, where '18' === 18 is false
+
+
+//we can store data from a prompt (user entered) into a variable (favorite, here)
+
+// const favorite = prompt(`What's your favorite number?`);
+
+// console.log(favorite);
+// console.log(typeof favorite);
+
+// //the output here is a string, but it works because of the loose equality operator
+// if(favorite ==23){
+//   console.log(`Cool! 23 is an amazing number!`);
+// }
+
+// //This won't work because the string is not STRICTLY equal to the number
+// if(favorite ===23){
+//   console.log(`Cool! 23 is an amazing number!`);
+// }
+
+//If we convert the string to a number, then the strict equality operator will work
+
+// const favorite = Number (prompt(`What's your favorite number?`));
+
+// if(favorite ===23){
+//   console.log(`Cool! 23 is an amazing number!`);
+// }
+
+// //else if
+// const favorite = Number (prompt(`What's your favorite number?`));
+
+// if(favorite ===23){
+//   console.log(`Cool! 23 is an amazing number!`);
+// } else if(favorite === 7) {
+//   console.log(`7 is also a cool number!`);
+// } else if(favorite === 8) {
+//   console.log(`8 is also a cool number!`);
+// } else {
+//   console.log(`Number is not 23, 7, or 8!`);
+// }
+
+// //can check if the number is NOT === to something using the different operator !==. The !== is the strict version, where the != is the loose version. 
+// if(favorite !== 23) console.log(`why not 23?`);
+
+
+//BOOLEAN Logic. This is the same for all coding languages
+
+//Boolean values can be true or false. 
+
+//AND operator (&&) nly returns if both A AND B are true. This can be used with more than one value. These are true when ALL conditions are true. 
+
+//OR operator (||) is true if A OR B are true
+
+//There is also the NOT operator (!A). This inverts the result. If A is true, it becomes NOT true
+
+// const hasDriversLicense = true;
+// const hasGoodVision = true;
+
+// console.log(hasDriversLicense && hasGoodVision);// this is AND
+// console.log(hasDriversLicense || hasGoodVision); //this is OR
+// console.log(!hasDriversLicense); //makes true variable false
+
+// const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// // if(hasDriversLicense && hasGoodVision) {
+// //   console.log(`Sarah is able to drive!`);
+// // } else {
+// //   console.log(`Someone else should drive!`); 
+// // }
+
+// const isTired = false;
+// console.log(hasDriversLicense && hasGoodVision && isTired)
+
+// if(hasDriversLicense && hasGoodVision && !isTired) {//!isTired means that Sarah has to be NOT is tired (so she isn't tired)
+//   console.log(`Sarah is able to drive!`);
+// } else {
+//   console.log(`Someone else should drive!`); 
+// }
+
+//CODING CHALLENGE #3!
+
+//my solution was functional, but could be slimmed down a little
+// const score1Dolphins = 90;
+// const score2Dolphins = 90;
+// const score3Dolphins = 90;
+
+// const score1Koalas = 90;
+// const score2Koalas = 90;
+// const score3Koalas = 90;
+
+// const avgScoreDolphins = ((score1Dolphins + score2Dolphins + score3Dolphins)/3);
+// console.log (avgScoreDolphins);
+
+// const avgScoreKoalas = ((score1Koalas + score2Koalas + score3Koalas)/3);
+// console.log(avgScoreKoalas);
+
+// if(((avgScoreDolphins > avgScoreKoalas) && ((avgScoreDolphins || avgScoreKoalas) > 100))) {
+//   console.log(`Dolphins win!`);
+// } else if ((avgScoreDolphins === avgScoreKoalas)&& ((avgScoreDolphins || avgScoreKoalas) > 100)){
+//   console.log(`It's a tie!`);
+// } else if ((avgScoreDolphins < avgScoreKoalas)&& ((avgScoreDolphins || avgScoreKoalas) > 100)){
+//   console.log(`Koalas win!`);
+// } else {
+//   console.log(`No one wins the trophy! :(`);
+// }
+
+//Jonas' solution:
+// const scoreDolphins = (97 + 112 + 89)/3;
+// const scoreKoalas = (109 + 95 + 86)/3;
+// console.log(scoreDolphins, scoreKoalas);
+
+// if(scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+//   console.log(`Dolphins win the trophy! 🏆`);
+// } else if(scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
+//   console.log(`Koalas win the trophy! 🏆`);
+// } else if(scoreDolphins === scoreKoalas && scoreKoalas >= 100 && scoreDolphins >= 100) {
+//   console.log(`Both teams win the trophy! 🏆`);
+// } else {
+//   console.log(`No one wins the trophy! 😢`);
+// }
+
+
+//switch statements replace if else statements when trying to compare many things. 
+
+//We are hardcoding variables (age, score, etc) but in real world application these are provided from elsewhere
+
+
+//syntax for switch statements is unlike anything else in JS. 
+//This replaces multiple else if statements
+// const day = `saturday`;
+
+// switch(day){
+//   case `monday`://this is like writing day === monday. If true, executes code below:
+//     console.log(`Plan course structure.`);//can execute multiple lines/elements of code per case
+//     console.log(`Go to coding meetup.`);
+//       break;//MUST have the break statement between where separate code elements occur
+//     case `tuesday`:
+//       console.log(`Prepare theory videos`);
+//       break;
+//     case `wednesday`://can have the same code for multiple cases
+//     case `thursday`:
+//         console.log(`Write code examples`);
+//       break;
+//     case `friday`:
+//       console.log(`Record videos`);
+//       break;
+//     case `saturday`:
+//     case `sunday`:
+//       console.log(`Enjoy the weekend! :D`);
+//     default:
+//       console.log(`Not a valid day!`);//this is like the ending else statement if everything fails
+// }
+
+
+//switch statements are being used less and less
+
+//write this as if else statements (need logical operators):
+// const day = `december`;
+
+
+// if(day === `monday`){
+//   console.log(`Plan course structure.`);
+//   console.log(`Go to coding meetup.`);
+// } else if(day === `monday`){
+//   console.log(`Prepare theory videos`);
+// } else if(day === (`wednesday` || `thursday`)){
+//   console.log(`Write code examples`);
+// } else if(day === `friday`){
+//   console.log(`Record videos`);
+// } else if(day === (`saturday` || `sunday`)){
+//   console.log(`Enjoy the weekend! :D`);
+// } else {
+//   console.log(`Not a valid day!`);
+// }
+
+
+//STATEMENTS VS EXPRESSIONS
+//expression is a piece of code that produces a value e.g., 3 + 4, 1991, true && false && !false
+
+//if else is a statement. Statments end with ;
+//can declare variables
+//strings are expressions
+
+//BOTTOM LINE: Expressions produce values, and statements are like full sentences
+
+//CONDITIONAL (ternary) operator
+//if else and switch statements are operators. 
+//This is the conditional operator
+
+// const age = 23; //> is the if statment, : is the else block
+// age >= 18 ? console.log(`I like to drink wine. 🍷`) : console.log(`I like to drink water. 💦`);
+
+//also called the ternary operator (3 parts: condition, if and else parts)
+//this is an expression (it produces an output)
+
+//can use this to declare variables
+
+
+// //the ternary operator replaces the if else statement below this block
+// age = 23;
+// // const drink = age >= 18 ?  `wine 🍷` : `water 💦`;
+// // console.log(drink);
+
+// // //to do this in if else:
+
+// // let drink2; //have to declare variable outside
+
+// // if(age >= 18){
+// //   drink2 = `wine 🍷`;
+// // } else {
+// //   drink2 = `water 💦`;
+// // }
+
+// //using the ternary operator, we can add conditional statements inside of a template literal
+
+// console.log(`I like to drink ${age >= 18 ?  `wine 🍷` : `water 💦`}`);//this is cool
+
+//ternary operator is NOT a replacement for if else statements, but can be great for smaller applications
+
+//CODING CHALLENGE #4!
+
+//tip calculator, if bill is between 50 and 300, tip is 15%, otherwise it is 20%
+
+const bill = 40;//bill amounts 275, 40, 430
+
+const tip = bill >= 50 && bill <= 300 ? bill *.15 : bill *.20;
+console.log(`The bill is ${bill}, and the tip should be ${tip}. The total amount owed is ${bill + tip}!💰`);
