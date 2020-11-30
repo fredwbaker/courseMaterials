@@ -406,49 +406,113 @@
 
 //METHODS can be applied directly to arrays
 
-const friends = [`Voltron`, `Woody`, `Sally`];
-friends.push(`Myrtle`);//push is a method to add an item to the END of an array, so we are adding Myrtle to the end of the friends array here.
-console.log(friends);
+// const friends = [`Voltron`, `Woody`, `Sally`];
+// friends.push(`Myrtle`);//push is a method to add an item to the END of an array, so we are adding Myrtle to the end of the friends array here.
+// console.log(friends);
 
-//add elements
-const newLength = friends.push(`Jonesy`, `Cletus`);
-console.log(friends);
-console.log(newLength);
+// //add elements
+// const newLength = friends.push(`Jonesy`, `Cletus`);
+// console.log(friends);
+// console.log(newLength);
 
-friends.unshift(`Logan`);//adds elements to the BEGINNING of an array
-console.log(friends);
+// friends.unshift(`Logan`);//adds elements to the BEGINNING of an array
+// console.log(friends);
 
-friends.push(`tom`);
-console.log(friends);
+// friends.push(`tom`);
+// console.log(friends);
 
-//remove elements
-friends.pop();//removes last emement
-console.log(friends)
+// //remove elements
+// friends.pop();//removes last emement
+// console.log(friends)
 
 
-const popped = friends.pop();//tells you who was removed
-console.log(popped);
+// const popped = friends.pop();//tells you who was removed
+// console.log(popped);
 
-friends.shift();//removes first element
-console.log(friends);
+// friends.shift();//removes first element
+// console.log(friends);
 
-//adding them back
-friends.unshift(`Logan`);
-friends.push(`Cletus`);
-console.log(friends);
+// //adding them back
+// friends.unshift(`Logan`);
+// friends.push(`Cletus`);
+// console.log(friends);
 
-//FIND elements in array
+// //FIND elements in array
 
-console.log(friends.indexOf(`Voltron`));//find out what position something on index is (this returns 1, where array shows (starts at 0): script.js:438 (7) ["Logan", "Voltron", "Woody", "Sally", "Myrtle", "Jonesy", "Cletus"])
-console.log(friends.indexOf(`Tim`));//if you ask for something NOT in the array, you get -1
+// console.log(friends.indexOf(`Voltron`));//find out what position something on index is (this returns 1, where array shows (starts at 0): script.js:438 (7) ["Logan", "Voltron", "Woody", "Sally", "Myrtle", "Jonesy", "Cletus"])
+// console.log(friends.indexOf(`Tim`));//if you ask for something NOT in the array, you get -1
 
-//You can also check to see IF an element is part of the array or not:
-console.log(friends.includes(`Voltron`));//True
-console.log(friends.includes(`Tim`));//False
-console.log(friends.includes(`voltron`));//false (uses STRICT equality, so the lower case v makes it false)
+// //You can also check to see IF an element is part of the array or not:
+// console.log(friends.includes(`Voltron`));//True
+// console.log(friends.includes(`Tim`));//False
+// console.log(friends.includes(`voltron`));//false (uses STRICT equality, so the lower case v makes it false)
 
-//can use the .includes method to write conditionals:
+// //can use the .includes method to write conditionals:
 
-if (friends.includes(`Voltron`)) {
-    console.log(`You have a friend named Voltron!`);
-}
+// if (friends.includes(`Voltron`)) {
+//     console.log(`You have a friend named Voltron!`);
+// }
+
+
+//CODING CHALLENGE #2: ARRAYS
+
+// //super proud, because THIS is FUNCTIONAL AND I did it WITHOUT LOOKING ANYTHING UP!! Functions and arrays
+
+
+// let totalBill = function calcTip(bill){
+//     if (bill >=50 && bill <= 300) {
+//         const tip = bill*.15;
+//         const totalBill = bill+tip;
+//         console.log(`The bill is $${bill}, plus a 15% tip of $${tip} brings the total bill to $${totalBill}! Party on!`);
+//         return tip;
+//     } else if (bill <=50 || bill >= 300){
+//         const tip = bill*.20;
+//         const totalBill = bill+tip;
+//         console.log(`The bill is $${bill}, plus a 20% tip of $${tip} brings the total bill to $${totalBill}! Party on!`);
+//         return tip;
+//     }
+// }
+
+// //testing:
+// // const bill0 = totalBill(100);
+// // const bill1 = totalBill(125);
+// // const bill2 = totalBill(555);
+// // const bill3 = totalBill(44);
+
+// // console.log(bill0);
+
+// const bills = [125, 555, 44];
+// console.log(bills);
+
+// const tips = [totalBill(bills[0]), totalBill(bills[1]), totalBill(bills[2])];
+// console.log(tips);
+
+// const totals = [(bills[0]+tips[0]), (bills[1]+tips[1]), (bills[2]+tips[2])];
+// console.log(totals);
+
+// //this also works!
+// // const promptedBill = prompt(`How much was your bill?`);
+// // calcTip(+promptedBill);
+
+
+//JONAS' SOLUTION
+
+// const calcTip = function(bill) {
+//     return bill >= 50 && 300 <=300 ? bill * 0.15 : bill * 0.2;
+// }//this is MUCH cleaner and simpler than mine above. Need to learn how to do this.
+
+// //OR
+
+// // const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+// const bills = [125, 555, 44];
+
+// const tips = [calcTip(bills[0]),calcTip(bills[1]), calcTip(bills[2])];
+
+// const totals = [bills [0] + tips[0], bills [1] + tips[1], bills [3] + tips[3]];
+
+// console.log(bills, tips, totals);
+
+
+
+
