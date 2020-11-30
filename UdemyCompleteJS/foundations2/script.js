@@ -356,17 +356,17 @@
 
 //two most important data structures in JS are arrays and objects. 
 //Instead of this: 
-const friend1 = `Michael`;
-const friend2 = `Quinn`;
-const friend3 = `Sally`;
+// const friend1 = `Michael`;
+// const friend2 = `Quinn`;
+// const friend3 = `Sally`;
 
 //arrays let us do this:
 
-const friends = [`Michael`, `Quinn`, `Sally`];
-console.log(friends);
+// const friends = [`Michael`, `Quinn`, `Sally`];
+// console.log(friends);
 
 
-const y = new Array(1979, 2006, 2009, 2011, 2017); //this is also possible, but more typical to use the bracket syntax above
+// const y = new Array(1979, 2006, 2009, 2011, 2017); //this is also possible, but more typical to use the bracket syntax above
 
 // console.log(friends[0]); //arrays are zero based, so element 1 is 0. 
 
@@ -387,19 +387,68 @@ const y = new Array(1979, 2006, 2009, 2011, 2017); //this is also possible, but 
 // console.log(fred.length);
 
 //EXERCISE
-const calcAge = function (birthyear) {
-    return 2020 - birthyear;
+// const calcAge = function (birthyear) {
+//     return 2020 - birthyear;
+// }
+
+// const years = [1979, 1979, 2006, 2009, 2011, 2017]
+
+// //can't do calcAge(years); bc it expects a single number, not an array
+
+// const age1 = calcAge(years[0]);//use an array position as an input to our function
+// const age2 = calcAge(years[2]);
+// const age3 = calcAge(years [years.length - 1]);//use the last position in the array as an input
+// console.log(age1, age2, age3);
+
+// const ages = [calcAge(years[0]), calcAge(years[2]), calcAge(years [years.length - 1])]; //can put function calls into a new array
+
+// console.log(ages);
+
+//METHODS can be applied directly to arrays
+
+const friends = [`Voltron`, `Woody`, `Sally`];
+friends.push(`Myrtle`);//push is a method to add an item to the END of an array, so we are adding Myrtle to the end of the friends array here.
+console.log(friends);
+
+//add elements
+const newLength = friends.push(`Jonesy`, `Cletus`);
+console.log(friends);
+console.log(newLength);
+
+friends.unshift(`Logan`);//adds elements to the BEGINNING of an array
+console.log(friends);
+
+friends.push(`tom`);
+console.log(friends);
+
+//remove elements
+friends.pop();//removes last emement
+console.log(friends)
+
+
+const popped = friends.pop();//tells you who was removed
+console.log(popped);
+
+friends.shift();//removes first element
+console.log(friends);
+
+//adding them back
+friends.unshift(`Logan`);
+friends.push(`Cletus`);
+console.log(friends);
+
+//FIND elements in array
+
+console.log(friends.indexOf(`Voltron`));//find out what position something on index is (this returns 1, where array shows (starts at 0): script.js:438 (7) ["Logan", "Voltron", "Woody", "Sally", "Myrtle", "Jonesy", "Cletus"])
+console.log(friends.indexOf(`Tim`));//if you ask for something NOT in the array, you get -1
+
+//You can also check to see IF an element is part of the array or not:
+console.log(friends.includes(`Voltron`));//True
+console.log(friends.includes(`Tim`));//False
+console.log(friends.includes(`voltron`));//false (uses STRICT equality, so the lower case v makes it false)
+
+//can use the .includes method to write conditionals:
+
+if (friends.includes(`Voltron`)) {
+    console.log(`You have a friend named Voltron!`);
 }
-
-const years = [1979, 1979, 2006, 2009, 2011, 2017]
-
-//can't do calcAge(years); bc it expects a single number, not an array
-
-const age1 = calcAge(years[0]);//use an array position as an input to our function
-const age2 = calcAge(years[2]);
-const age3 = calcAge(years [years.length - 1]);//use the last position in the array as an input
-console.log(age1, age2, age3);
-
-const ages = [calcAge(years[0]), calcAge(years[2]), calcAge(years [years.length - 1])]; //can put function calls into a new array
-
-console.log(ages);
