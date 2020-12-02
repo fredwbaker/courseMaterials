@@ -50,14 +50,18 @@ img {
 
 .name {
   font-size: 1.25em;
+  margin: 0; /* Guil added to prevent collapsing, but made mine HUGE. It removes the default margin values*/
 }
 
 .name a,
 .main-nav a {
   text-align: center;
+  display: block; /* Guil added to provide extra space in the nac links */
+  padding: 10px 15px; /* Guil added to provide extra space in the nac links */
 }
 
 .main-nav a {
+  margin-top: 5px; /*Guil added here to compensate for removing it from Name. It moved the nav in line better */
   font-size: 0.95em;
   color: #3acec2;
   text-transform: uppercase;
@@ -69,11 +73,31 @@ img {
 
 /* ---- Layout Containers ---- */
 
+/*Guil added to provide extra padding in the header. Breaks my banner (bc I already have padding?)*/
+/* .main-header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+} */
+
+/* Guil added this, but I already had this in a different place
+/* .banner,
+.main-footer {
+  text-align: center;
+} */
+
 .banner {
   color: #fff;
   background: #3acec2;
+  /* padding: 3.2em 0; Guil added to provide padding. I already had this */
+  /* margin-bottom: 60px; Guil added to provide padding. I already had this */
 }
 
+/* Moved .col to the layout containers from the @media queries for DRY code */
+.col {
+  display: inline-block;
+  padding-right: 1em; /*Guil added padding here, rather than in the elements*/
+  padding-left: 1em; /*Guil added padding here, rather than in the elements*/
+}
 .main-footer {
   background: #d9e4ea;
   padding: 2em 0;
@@ -86,11 +110,32 @@ img {
   width: 190px;
 }
 
+/* this is a good add. It removes the space between THE BEST CITY headline and subtitle text */
+.headline {
+  margin-bottom: 0;
+}
+
 /* ================================= 
   Media Queries
 ==================================== */
 
 @media (max-width: 768px) {
+  /* Guil added to center the containers. I only had styling applied to the content div I created around the columns */
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Guil added */
+  .name {
+    float: left;
+  }
+
+  /* Guil added */
+  .main-nav {
+    float: right;
+  }
+
   .name,
   .main-nav {
     text-align: center;
@@ -100,6 +145,13 @@ img {
 
   .main-nav li {
     margin: 1em;
+    /* display: inline-block; Guil added in combination with the .name and .main-nav floats above */
+    /* margin-left: 15px; Guil added in combination with the .name and .main-nav floats and the display here */
+  }
+
+  /* Guil added to increase the font size of tagline elements from html: The best drinks and eats in the best city ever. */
+  .tagline {
+    font-size: 1.4em;
   }
 
   .banner,
@@ -120,14 +172,14 @@ img {
     display: inline-block;
   }
 
-  .col {
+  /* .col {
     display: inline-block;
-  }
+  } */
 
   .primary {
     float: none;
     width: 80%;
-    /* margin: 0 2%; */
+    /* margin: 0 2%; Removed because we added this in the .col under layout containers*/
   }
 
   .secondary {
@@ -184,14 +236,14 @@ img {
     display: inline-block;
   }
 
-  .col {
+  /* .col {
     display: inline-block;
-  }
+  } */
 
   .primary {
     float: right;
     width: 45%;
-    margin: 0 2%;
+    /* margin: 0 2%; Removed because we added this in the .col under layout containers*/
   }
 
   .secondary {
@@ -213,7 +265,14 @@ img {
   }
 }
 
-@media (min-width: 1000px) {
+/* changed mine from 1000 to 1025 */
+@media (min-width: 1025px) {
+  /* Guil added to account for width, but this moves my content to the left on large screens 
+  .container {
+    width: 80%;
+    max-width: 1150px;
+  } */
+
   .main-nav {
     display: inline-block;
     float: right;
@@ -246,14 +305,14 @@ img {
     display: inline-block;
   }
 
-  .col {
+  /* .col {
     display: inline-block;
-  }
+  } */
 
   .primary {
     float: none;
-    width: 36%;
-    margin: 0 2%;
+    width: 40%; /*changed from 36% because we added a margin for the container in layout
+    /* margin: 0 2%; Removed because we added this in the .col under layout containers*/
   }
 
   .secondary {
