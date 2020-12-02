@@ -1,0 +1,276 @@
+/*
+  If you get stuck, feel free to watch the follow-up videos where I'll show you one solution
+*/
+
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+p {
+  font-size: 0.95em;
+  margin-bottom: 1.8em;
+}
+
+h2,
+h3,
+a {
+  color: #093a58;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.25em;
+}
+
+.name a,
+.main-nav a {
+  text-align: center;
+}
+
+.main-nav a {
+  font-size: 0.95em;
+  color: #3acec2;
+  text-transform: uppercase;
+}
+
+.main-nav a:hover {
+  color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.banner {
+  color: #fff;
+  background: #3acec2;
+}
+
+.main-footer {
+  background: #d9e4ea;
+  padding: 2em 0;
+  margin-top: 30px;
+}
+
+/* ---- Page Elements ---- */
+
+.logo {
+  width: 190px;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (max-width: 768px) {
+  .name,
+  .main-nav {
+    text-align: center;
+    display: block;
+    float: none;
+  }
+
+  .main-nav li {
+    margin: 1em;
+  }
+
+  .banner,
+  .header,
+  .main-footer {
+    text-align: center;
+    min-width: 100%;
+  }
+
+  .banner {
+    padding: 4rem;
+  }
+
+  .content {
+    margin: 2em 10%;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+  }
+
+  .col {
+    display: inline-block;
+  }
+
+  .primary {
+    float: none;
+    width: 80%;
+    /* margin: 0 2%; */
+  }
+
+  .secondary {
+    float: none;
+    width: 80%;
+  }
+
+  .tertiary {
+    float: none;
+    width: 80%;
+  }
+
+  /* ---- Float clearfix ---- */
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+@media (min-width: 769px) {
+  .main-nav {
+    display: inline-block;
+    float: right;
+    margin-right: 5em;
+  }
+
+  .name,
+  .main-nav li {
+    display: inline-block;
+    margin: 1em;
+  }
+
+  .name {
+    margin-left: 10%;
+  }
+
+  .banner,
+  .header,
+  .main-footer {
+    text-align: center;
+    min-width: 100%;
+  }
+
+  .banner {
+    padding: 4rem;
+  }
+
+  .content {
+    margin: 2em 10%;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+  }
+
+  .col {
+    display: inline-block;
+  }
+
+  .primary {
+    float: right;
+    width: 45%;
+    margin: 0 2%;
+  }
+
+  .secondary {
+    float: left;
+    width: 45%;
+  }
+
+  .tertiary {
+    float: none;
+    width: 100%;
+  }
+
+  /* ---- Float clearfix ---- */
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+@media (min-width: 1000px) {
+  .main-nav {
+    display: inline-block;
+    float: right;
+    margin-right: 5em;
+  }
+
+  .name,
+  .main-nav li {
+    display: inline-block;
+    margin: 1em;
+  }
+
+  .name {
+    margin-left: 10%;
+  }
+
+  .banner,
+  .header,
+  .main-footer {
+    text-align: center;
+    min-width: 100%;
+  }
+
+  .banner {
+    padding: 4rem;
+  }
+
+  .content {
+    width: 80%;
+    display: inline-block;
+  }
+
+  .col {
+    display: inline-block;
+  }
+
+  .primary {
+    float: none;
+    width: 36%;
+    margin: 0 2%;
+  }
+
+  .secondary {
+    float: left;
+    width: 30%;
+  }
+
+  .tertiary {
+    float: right;
+    width: 30%;
+  }
+
+  /* ---- Float clearfix ---- */
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
