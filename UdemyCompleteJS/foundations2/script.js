@@ -757,6 +757,263 @@
 //     console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi}).`)
 // } else {
 
+    // console.log{
+    //     `${john.fullName} and ${mark.fullName}'s BMIs are equal.`
+    // }
+
 // }
 
 // updated this page 12/3/2020
+
+
+//LOOPS
+//loops allow us to automate repetetive tasks that we do over and over again. 
+
+//if you needed to do 10 reps, you could do this: 
+// console.log(`Lifting weights: repetition 1 🏋️‍♀️🏋`);
+// console.log(`Lifting weights: repetition 2 🏋️‍♀️🏋`);
+// console.log(`Lifting weights: repetition 3 🏋️‍♀️🏋`);
+
+//but this violates the DRY criteria
+
+//for statements create loops. Three parts: 
+//create a variable (use let) and indicate the starting place
+// for(let rep = 1)
+
+//second part is a logical condition that is checked before running again. So long as this condition is true, the loop keeps running. Hit 10 reps, loop stops
+// for(let rep = 1; rep <= 10)
+
+//3rd part is to update the counter after each loop (rep = rep+1)
+// for(let rep = 1; rep <= 10; rep = rep +1);
+
+//but, we learned a shorter way to do this (rep++):
+// for(let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights: repetition ${rep} 🏋️‍♀️🏋`);
+// } //this counts up and automates the loop
+
+//LOOPS, ARRAYS, BREAKING, and CONTINUING
+
+// const fred = [
+//     `Fred`,
+//     `Baker`,
+//     2020-1979,
+//     `Front End Developer`,
+//     [`MyAmy`, `Georgie Le Porge`, `Charlie Bear`, `Sammie Beans`, `Himmie Bimmie`],
+// ];
+
+
+// console.log(fred);
+// console.log(fred.length);
+
+// //i is a traditional variable name for for loops. arrays are 0 based, so start at 0
+//fred{5] does not exist in the array above, so we stop i at 4 below
+
+
+//this solution has a problem, because we hard coded the length at 5 (i < 5), so if our array changes, the code breaks
+// for(let i = 0; i < 5 ; i++){
+//     console.log(fred[i]) // this is like console.log(fred[0]);
+// }
+
+//adding an item to the array means it won't be logged, because the for loop is hard coded to stop at 5
+
+// fred.push(`html`);
+// fred.push(`css`);
+// fred.push(`javascript`);
+// console.log(fred);
+// console.log(fred.length);
+
+//we should compute the length in the array, rather than stating it
+
+//create an empty array
+// const types = [];
+
+// for(let i = 0; i < fred.length; i++){
+//     console.log(fred[i], typeof fred[i])//added typeof
+//     //filling the types array
+//     // types[i] = typeof fred[i];
+    
+//     //another way to fill the types array
+//     types.push(typeof fred[i]);
+// }    
+
+// console.log(types);
+
+
+//another loop, similar to the calcTip project with bills
+
+// const years = [1979, 2006, 2009, 2011, 2017];
+
+// years.unshift(1979);//to add a 2nd 1979 year
+
+// //will fill up the ages array based on years array
+// const ages = [];
+
+// for(let i = 0; i < years.length; i++) {
+//     ages.push(2020- years[i]);//fills the ages array
+// }
+
+// console.log(ages);
+
+
+//CONTINUE and BREAK
+
+//continue is to exit the current array and return somewhere
+//break is to stop completely
+
+// //want to print only strings: use continue. Continue exists the current iteration of the loop and then goes to the next
+// console.log(`----Only Strings!-----`)
+// for(let i = 0; i < fred.length; i++) {
+//     if(typeof fred[i] !== `string`) continue; //IF the type of the current element is NOT a string, then continue. This means it will not print to console if not a string
+//     console.log(fred[i], typeof fred[i]);//this doesn't print
+// }
+
+// console.log(typeof fred);
+
+// //want to stop completely when we encounter a number. Use break
+// console.log(`----break with number!-----`)
+// for(let i = 0; i < fred.length; i++) {
+//     if(typeof fred[i] === `number`) break; //iterates until it finds a number, then breaks from the loop
+//     console.log(fred[i], typeof fred[i]);
+// }
+
+//LOOPING BACKWARDS and LOOPS IN LOOPS
+
+//LOOPING Backwards
+// const fred = [
+//     `Fred`,
+//     `Baker`,
+//     2020-1979,
+//     `HTML, CSS, & Javascript`,
+//     `Front End Developer`,
+//     [`MyAmy`, `Georgie Le Porge`, `Charlie Bear`, `Sammie Beans`, `Himmie Bimmie`],
+// ];
+
+
+// for(let i = fred.length -1; i >= 0; i--) {
+//      console.log(i, fred[i], typeof fred[i]);   
+// }
+
+//Loop inside of a loop
+
+//3 exercises, 5 reps each, 15 repetitions total
+
+// for(let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`-----Starting Exercise ${exercise}🏋️‍♂️`);   
+
+//     for (let rep = 1; rep <6; rep++){
+//         console.log(`Exercise ${exercise}: Lifting Weight repetition ${rep}🏋️‍♀️`)
+//     }
+// }
+
+//WHILE LOOP
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`FOR LOOP: Lifting Weights Repetition ${rep}! 🏋️‍♀️`);
+// }
+
+//while loops have the same components, but we can only specify the condition
+
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`WHILE LOOP: Lifting Weights Repetition ${rep}! 🏋️‍`);
+//     rep++;
+// }
+
+//while loop is more powerful because it only needs a condition. 
+
+
+//roll dice, and keep rolling until we roll a 6. DOn't need a counter variable. 
+
+// let dice = Math.random() * 6; //this will make a decimal #, so we need Math.trunc:
+// console.log(dice);
+
+// let dice = Math.trunc(Math.random() * 6) +1;
+// console.log(dice);//this produces a random whole number between 1 and 6
+
+// while (dice !== 6) {
+//     console.log(`You rolled a ${dice}`);//this would crash the browser by making an infinite loop without part below
+//     dice = Math.trunc(Math.random() * 6) +1; //this adds a new dice roll
+//     if (dice === 6) console.log(`Loop Ends! You rolled a ${dice}!! 🎲`);
+// }
+
+// //if the first roll is a 6, the loop is never entered.
+
+//CODING CHALLENGE #4
+
+//tip calculator with loops. 
+
+//1. create an array called bills
+//2. 
+
+
+//MY SOLUTION
+
+// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2; 
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+// console.log(bills);
+
+// const totals = [];
+// const tips = [];
+
+// for(let i = 0; i < bills.length; i++) {
+//         tips.push(calcTip(bills[i])); 
+//         console.log(`Tips: ${tips}`);   
+//     }
+
+// for(let i = 0; i < bills.length; i++) {
+//     totals.push(bills[i] + tips[i]); 
+//     console.log(`Totals: ${totals}`);   
+// }
+
+// console.log(totals);
+// // const sum = [];
+// // let arr =[];
+
+// let sum = 0;
+
+// for(let i = 0; i < totals.length; i++) {
+//     sum += totals[i];
+// }
+
+// let average = sum / totals.length;
+
+// console.log(average); //this part I couldn't get to calculate for some reason, but it follows https://stackoverflow.com/questions/29544371/finding-the-average-of-an-array-using-js
+
+
+//JONAS' SOLUTION
+
+// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2; 
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+// const tips = [];
+// const totals = [];
+
+// for( let i = 0; i < bills.length; i++) {
+//     const tip = calcTip(bills[i]); //can use const bc we are actually creating a new variable
+//     tips.push(tip);
+//     totals.push(tip + bills[i]);
+// }
+
+// console.log(bills, tips, totals);
+
+// const calcAverage = function (arr) {
+//     let sum = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         // sum = sum + arr[i];
+//         sum += arr[i];
+//     }
+//     return sum / arr.length;
+//     // console.log(sum);
+// }
+
+// console.log(calcAverage([2, 3, 7]));
+
+// console.log(calcAverage(totals));
+// console.log(calcAverage(tips));
+
+
+//FINISH Javascript Fundamentals Part 2!!
+
