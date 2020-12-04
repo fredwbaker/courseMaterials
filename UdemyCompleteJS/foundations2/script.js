@@ -513,6 +513,248 @@
 
 // console.log(bills, tips, totals);
 
+//OBJECTS
+//Up to now, we use arrays to store data, but you can only see position, not relationship of the data. With objects, we can define relationships.
+
+
+//This is the Object Litereal Syntax. It allows the variable to hold a range of related variables, but order doesn't matter. Use Arrays for ordered data, and objects for other data.
+
+// const fred= {
+//     firstName: `Fred`,
+//     lastName: `Baker`,
+//     age: 2020-1979,
+//     job: `coder`,
+//     friends: [`Amy`, `voltron`, `Herbie`, `Joe`],
+// };
+
+// console.log(fred); //displays everything in alphabetical order
+
+// console.log(fred.lastName); //Goes to the fred property, and returns the property name
+
+// console.log(fred[`lastName`]);//this syntax allows us to compute from an operation, rather than typing in directly
+
+// const nameKey = `Name`;
+// console.log(fred [`first`+ nameKey]);//computes the variable firstName by combining our `first` with the nameKey variable, which is Name. 
+// console.log(fred [`last` + nameKey]);//this pulls the last name from the object. This method allows us to build the variable from our input and a variable name
+
+// console.log(nameKey); //reports `Name` from above
+
+// console.log(fred.`last` + nameKey); //this won't work. dot notation isn't for adding variables.
+
+// const interestedIn = prompt(`What do you want to know about Fred? Choose between firstName, lastName, age, job, and friends.`)//this returns a string that we store in a variable
+
+
+// console.log(fred.interestedIn); //returns undefined. This won't work. Undefined is what you get when trying to access a property that doesn't exist.
+
+// console.log(fred [interestedIn]);//this works! Use the bracket notation to replace the actual variable name with what the user entered
+
+//can still get undefined if we enter something that isn't there, such as `location`
+
+//undefined is a falsy value, so we can use an if else statement to filter true values from false
+
+// if(fred[interestedIn]){//if the variable they enter is in the object
+//     console.log(fred[interestedIn]);//if one of the true values were actually empty or zero, it would go to the else block. Not accounted for here.
+// } else {
+//     console.log(`Request not an option! Please try something on the list! Choose between firstName, lastName, age, job, and friends.`);
+// }
+
+//use dot and bracket notation to add new elements
+
+// fred.location = `Florida`
+// fred[`twitter`] = `@fredwbaker`;
+
+// console.log(fred)
+
+
+//Small CHALLENGE
+//Return this: `Fred has 3 friends, and his best friend is named `Amy`.
+
+// fred.friends = `Amy`; // this adds one letter at a time, so the request below shows A for position 0, rather than Amy. 
+
+// console.log(fred);
+
+// console.log(fred.friends);
+// console.log(`${fred.firstName} has ${fred.friends.length} friends, and his best friend's name is ${fred.friends [0]}` );
+
+//fred.friends.length gives the number of friends in an array
+
+
+//OBJECT METHODS
+
+//we can add functions to objects
+
+// const fred= {
+//     firstName: `Fred`,
+//     lastName: `Baker`,
+//     birthYear: 1979,
+//     job: `coder`,
+//     friends: [`Amy`, `voltron`, `Herbie`, `Joe`],
+//     hasDriversLicense: true,
+
+//     calcAge: function(birthYear) {//this makes calcAge an element in the object
+//         return 2020-birthYear;
+//     } 
+// };
+
+//any function attached to an object is called a method
+
+//the calcAge in the object is the same as the function below, except it is in an object
+// const calcAge = function(birthYear) {
+//     return 2020 - birthYear;
+// }
+
+
+// console.log(fred.calcAge(1979));//this calls the object element just like you would for anything else, except you pass it info. 
+
+// //passing the birthyear in isn't ideal, because it is already in the object. We can pull the birthyear directly from the object using THIS 
+
+// console.log(fred [`calcAge`](1979)); //can also use bracket notation
+
+
+//USING THE `THIS` ELEMENT
+
+// const fred= {
+//     firstName: `Fred`,
+//     lastName: `Baker`,
+//     birthYear: 1979,
+//     job: `coder`,
+//     friends: [`Amy`, `voltron`, `Herbie`, `Joe`],
+//     hasDriversLicense: true,
+
+//     calcAge: function() {
+//         console.log(this);       
+//         return 2020-this.birthYear;
+//     } 
+// };
+
+//this stands in for the object calling the function. In this  case it is fred calling the function (fred.calcAge), so it pulls fred.calcAge from the object, then returns 2020 - fred.birthYear (i.e., this.birthYear)
+
+// console.log(fred.calcAge());//returns 41
+
+//this keyword helps us reference the object without having to repeat the name multiple times throughout the code. 
+//This pulls the whole object
+
+//what if we need to access the age multiple times in the project? 
+
+// //We could call it multiple times
+// console.log(fred.calcAge());
+// console.log(fred.calcAge());
+// console.log(fred.calcAge());
+
+//OR we could calculate the property and tie it to a variable
+// // console.log(fred.calcAge());
+
+// const fred= {
+//     firstName: `Fred`,
+//     lastName: `Baker`,
+//     birthYear: 1979,
+//     job: `coder`,
+//     friends: [`Amy`, `voltron`, `Herbie`, `Joe`],
+//     hasDriversLicense: true,
+
+//     calcAge: function() {
+//         this.age = 2020-this.birthYear;//we are creating the age variable and appending it to the object, then returning it below      
+//         return this.age;
+//     }, //need to add a comma after previous function 
+
+//     getSummary: function() {
+//         return `${this.firstName} is a ${this.calcAge()} year old ${this.job}, and he has ${ this.hasDriversLicense ? `a` : `no`} Driver's License.`
+//     }
+// };
+
+// console.log(fred.calcAge());//calculate the age
+
+// console.log(fred.age); //call the age variable itself that we calculated in the object
+
+// //SMALL CHALLENGE: Get Summary Method
+
+// //`Fred is a 41 year old Coder, and he has a/no driver's license`
+
+// console.log(fred.getSummary());
+
+// //don't forget the ternary operator!!  this.hasDriversLicense ? `a` : `no`
+
+
+//CODING CHALLENGE #3 OBJECTS, METHODS, ARRAYS, FUNCTIONS
+
+// const mark = {
+//     firstName: `Mark`,
+//     lastName:  `Miller`,
+//     mass: 78,
+//     height: 1.69,
+
+//     calcBMI: function() {
+//         this.BMI = this.mass / this.height *2;
+//         return this.BMI;
+//     }
+// }
+
+// console.log(mark.calcBMI());
+
+
+// const mark = {
+//     firstName: `John`,
+//     lastName: `Smith`,
+//     mass: 92,
+//     height: 1.95,
+    
+//     calcBMI: function() {
+//         this.BMI = this.mass / this.height *2;
+//         return this.BMI;
+//     },
+
+//     getSummary: function(){
+//     }
+// }
+
+// console.log(john.calcBMI());
+
+// //this only works if I call the john.calcBMI AND the mark.calcBMI functions!
+
+// if (mark.BMI > john.BMI) {
+//     console.log(`${mark.firstName} ${mark.lastName}'s weight is ${mark.mass}, and his height is ${mark.height}, which makes his BMI ${mark.BMI}. This is more than ${john.firstName} ${john.lastName}'s BMI, which is ${mark.BMI}, because his weight is ${john.mass}, and his height is ${john.height}.`);
+//     } else if (mark.BMI < john.BMI){
+//     console.log(`${john.firstName} ${john.lastName}'s weight is ${john.mass}, and his height is ${john.height}, which makes his BMI ${john.BMI}.This is more than ${mark.firstName} ${mark.lastName}'s BMI, which is ${mark.BMI}, because his weight is ${john.mass}, and his height is ${mark.height}.`);
+//     } else {
+//     console.log(`${mark.firstName} ${mark.lastName}'s weight is ${mark.mass}, and his height is ${mark.height}, which makes his BMI ${mark.BMI}. ${john.firstName} ${john.lastName}'s weight is ${john.mass}, and his height is ${john.height}, which makes his BMI ${john.BMI}. These are equal.`);
+// }
 
 
 
+//JONAS' SOLUTION
+
+
+//we can use object oriented programming to avoid the DRY code issue by putting the calcBMI function twice
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function() {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+}
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function() {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+}
+
+mark.calcBMI();
+john.calcBMI();
+console.log(mark.bmi, john.bmi);
+
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi}).`)
+} else if (mark.bmi < john.bmi) {
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi}).`)
+} else {
+    
+}
