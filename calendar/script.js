@@ -1,7 +1,7 @@
 const date = new Date();
 
 const renderCalendar = () => {
-
+    date.setDate(1);
     
 // date.setMonth(1);
 
@@ -11,25 +11,43 @@ const renderCalendar = () => {
 
 const monthDays = document.querySelector(`.days`);
 
-const lastDay = new Date(date.getFullYear(), date.getMonth() +1, 0).getDate();//getDate() pulls current date, so we can use lastDay in our for loop in line 39 for lastDay
+const lastDay = new Date(
+    date.getFullYear(), 
+    date.getMonth() +1, 
+    0
+    ).getDate();//getDate() pulls current date, so we can use lastDay in our for loop in line 39 for lastDay
 
-const firstDayIndex = date.getDate();
+//code below was used during building to test
+// const lastDayIndex = new Date(
+//     date.getFullYear(),
+//     date.getMonth() + 1,
+//     0
+//   ).getDay();
 
-const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+//   console.log(lastDayIndex);
+// // const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
+
+// // console.log(lastDayIndex); //to find last day of month (index)
+
+
+const prevLastDay = new Date(
+    date.getFullYear(), 
+    date.getMonth(), 
+    0
+    ).getDate();
+
+// const firstDayIndex = date.getDate();//Used for testing
+
+const firstDayIndex = date.getDay();
 
 const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
     0
-  ).getDay();
+).getDay();
+  
+const nextDays = 7 - lastDayIndex - 1; //this piece was confusing. It wasn't giving the correct behavior, but i think it is because I was missing the const firstDayIndex = date.getDay(); on line 29, and hadn't commented out the getDate() piece on line 27
 
-  console.log(lastDayIndex);
-// const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
-
-// console.log(lastDayIndex); //to find last day of month (index)
-
-const nextDays = 11 - lastDayIndex - 1;
-// const nextDays = 7 - lastDayIndex - 1;//his doesn't show all days
 
 const months = [
     `January`,
@@ -46,11 +64,10 @@ const months = [
     `December`,
 ];
 
-document.querySelector(`.date h1`).innerHTML
-=months[date.getMonth()];
+document.querySelector(`.date h1`).innerHTML =months[date.getMonth()];
 
-document.querySelector(`.date p`).innerHTML
-= new Date().toDateString();
+document.querySelector(`.date p`).innerHTML = new Date().toDateString();
+
 
 let days = ``;
 
@@ -62,8 +79,10 @@ for (let x = firstDayIndex; x > 0; x--) {
 //     days += `<div class="prev date">${prevLastDay - x +1}</div>`;
 // }
 
+
 for(let i = 1; i <= lastDay; i++) {
-    if(i=== new Date().getDate() && date.getMonth() === new Date().getMonth()) {
+    if(i=== new Date().getDate() && 
+    date.getMonth() === new Date().getMonth()) {
         days += `<div class="today">${i}</div>`;
     } else{
         days += `<div>${i}</div>`;
@@ -75,7 +94,7 @@ for (let j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
     monthDays.innerHTML = days;
   }
-
+};
 
 // for(let j =1; j <= nextDays; j++){
 //     days += `<div class="nextDate">${j}</div>`;
@@ -83,17 +102,14 @@ for (let j = 1; j <= nextDays; j++) {
 // }
 
 
-
-}
-
 document.querySelector(`.prev`).addEventListener(`click`,()=>{
     date.setMonth(date.getMonth() -1)
-    renderCalendar();
-})
+    renderCalendar();//called the function within this selector
+})//listens for a click on the `previous` arrow
 
 document.querySelector(`.next`).addEventListener(`click`,()=>{
     date.setMonth(date.getMonth() +1)
-    renderCalendar();
-})
+    renderCalendar(); //called the function within this selector
+}) //listens for a click on the `next` arrow
 
-renderCalendar();
+renderCalendar(); //called the function in the global space
