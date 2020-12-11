@@ -118,19 +118,219 @@
 
 //WHAT HAPPENS WHEN SCORE RUNS OUT?:
 
-const secretNumber = Math.trunc(Math.random() * 20 + 1);
-console.log(secretNumber);
-document.querySelector(`.number`).textContent = secretNumber;
+// const secretNumber = Math.trunc(Math.random() * 20 + 1);
+// console.log(secretNumber);
+// document.querySelector(`.number`).textContent = secretNumber;
 
-let score = 20; //this is a state variable, because it contains the state of the code.
+// let score = 20; //this is a state variable, because it contains the state of the code.
+// document.querySelector(`.check`).addEventListener(`click`, function () {
+//   const guess = Number(document.querySelector(`.guess`).value);
+//   console.log(guess, typeof guess);
+
+//   if (!guess) {
+//     document.querySelector(`.message`).textContent = `⛔ Needs a Number!`;
+//   } else if (guess === secretNumber) {
+//     document.querySelector(`.message`).textContent = `CORRECT!! 🎉`;
+//   } else if (guess > secretNumber) {
+//     if (score > 1) {
+//       //only do the items below when score is over 0
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `📈 Too High... Try Again!`;
+//       score--; //decrease the score by one, now need to display it:
+//       document.querySelector(`.score`).textContent = score; //displays the new score
+//     } else {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
+//     }
+//   } else if (guess < secretNumber) {
+//     if (score > 1) {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `📉 Too Low... Try Again!`;
+//       score--; //decrease the score by one
+//       document.querySelector(`.score`).textContent = score; //displays the new score
+//     } else {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
+//     }
+//   }
+// });
+
+//DOM MANIPULATION OF CSS- Change Screen to Green when user wins, and widen the score box
+
+// const secretNumber = Math.trunc(Math.random() * 20 + 1);
+// console.log(secretNumber);
+// document.querySelector(`.number`).textContent = secretNumber;
+
+// let score = 20; //this is a state variable, because it contains the state of the code.
+// document.querySelector(`.check`).addEventListener(`click`, function () {
+//   const guess = Number(document.querySelector(`.guess`).value);
+//   console.log(guess, typeof guess);
+
+//   //when there is no input
+//   if (!guess) {
+//     document.querySelector(`.message`).textContent = `⛔ Needs a Number!`;
+
+//     //when player wins
+//   } else if (guess === secretNumber) {
+//     document.querySelector(`.message`).textContent = `CORRECT!! 🎉`;
+
+//     //no .body (that is for classes), we are just selecting the whole element, not a class or id
+//     //dashes aren't allowed in javascript, so to selecte background-color, you type backgroundColor. This is how you select anything with 2 words in css
+//     document.querySelector(`body`).style.backgroundColor = `#60b347`;
+
+//     //change the size of the box. Whenever manipulating a style, we need a string ``(not a number) and it has to have a unit!!
+//     document.querySelector(`.number`).style.width = `30rem`;
+
+//     //When guess is too high
+//   } else if (guess > secretNumber) {
+//     if (score > 1) {
+//       //only do the items below when score is over 0
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `📈 Too High... Try Again!`;
+//       score--; //decrease the score by one, now need to display it:
+//       document.querySelector(`.score`).textContent = score; //displays the new score
+
+//       //When score runs out on too high
+//     } else {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
+//     }
+
+//     //WHen guess is too low
+//   } else if (guess < secretNumber) {
+//     if (score > 1) {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `📉 Too Low... Try Again!`;
+//       score--; //decrease the score by one
+//       document.querySelector(`.score`).textContent = score; //displays the new score
+
+//       //when player loses with score too low
+//     } else {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
+//     }
+//   }
+// });
+
+//IMPLEMENT THE AGAIN! BUTTON
+
+//Select the element with the again class and attach a click event handler
+//in the handler function, restore initial values of the score and number variables
+//restore the initial conditions of the message, number, score, and guess input field
+//restore the original background color (#222) and number width (15 rem)
+
+// let secretNumber = Math.trunc(Math.random() * 20 + 1);
+
+// //TODO: shows number in console, disable before final
+// console.log(secretNumber);
+// //NOTE:
+// // document.querySelector(`.number`).textContent = secretNumber; // NOTE: Enable to show number on the screen
+
+// let score = 20;
+
+// document.querySelector(`.check`).addEventListener(`click`, function () {
+//   const guess = Number(document.querySelector(`.guess`).value);
+//   // console.log(guess, typeof guess); //NOTE: Enable to show number and type of in log
+
+//   //when there is no input
+//   if (!guess) {
+//     document.querySelector(`.message`).textContent = `⛔ Needs a Number!`;
+
+//     //when player wins
+//   } else if (guess === secretNumber) {
+//     document.querySelector(`.message`).textContent = `CORRECT!! 🎉`;
+//     document.querySelector(`body`).style.backgroundColor = `#60b347`;
+//     document.querySelector(`.number`).style.width = `30rem`;
+//     document.querySelector(`.number`).textContent = secretNumber;
+
+//     //When guess is too high
+//   } else if (guess > secretNumber) {
+//     if (score > 1) {
+//       //only do the items below when score is over 0
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `📈 Too High... Try Again!`;
+//       score--; //decrease the score by one, now need to display it:
+//       document.querySelector(`.score`).textContent = score; //displays the new score
+
+//       //When score runs out on too high
+//     } else {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
+//     }
+
+//     //WHen guess is too low
+//   } else if (guess < secretNumber) {
+//     if (score > 1) {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `📉 Too Low... Try Again!`;
+//       score--; //decrease the score by one
+//       document.querySelector(`.score`).textContent = score; //displays the new score
+
+//       //when player loses with score too low
+//     } else {
+//       document.querySelector(
+//         `.message`
+//       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
+//     }
+//   }
+// });
+
+// // //THIS WORKS!
+// document.querySelector(`.again`).addEventListener(`click`, function () {
+//   score = 20;
+//   secretNumber = Math.trunc(Math.random() * 20 + 1);
+//   document.querySelector(`.message`).textContent = `Start guessing...`;
+//   document.querySelector(`.score`).textContent = score; //I forgot this part. Thought the score= took care of the reset.
+//   document.querySelector(`body`).style.backgroundColor = `#222`;
+//   document.querySelector(`.number`).style.width = `15rem`;
+//   document.querySelector(`.number`).textContent = `?`;
+//   document.querySelector(`.guess`).value = ``;
+// });
+
+//IMPLEMENT HIGHSCORE:
+
+let secretNumber = Math.trunc(Math.random() * 20 + 1);
+
+//TODO: shows number in console, disable before final
+// console.log(secretNumber);//no longer works on reset
+//NOTE:
+// document.querySelector(`.number`).textContent = secretNumber; // NOTE: Enable to show number on the screen
+
+let score = 20;
+let highScore = 0;
+
 document.querySelector(`.check`).addEventListener(`click`, function () {
   const guess = Number(document.querySelector(`.guess`).value);
-  console.log(guess, typeof guess);
+  // console.log(guess, typeof guess); //NOTE: Enable to show number and type of in log
 
+  //when there is no input
   if (!guess) {
     document.querySelector(`.message`).textContent = `⛔ Needs a Number!`;
+
+    //when player wins
   } else if (guess === secretNumber) {
     document.querySelector(`.message`).textContent = `CORRECT!! 🎉`;
+    document.querySelector(`body`).style.backgroundColor = `#60b347`;
+    document.querySelector(`.number`).style.width = `30rem`;
+    document.querySelector(`.number`).textContent = secretNumber;
+
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(`.highscore`).textContent = highScore;
+    }
+
+    //When guess is too high
   } else if (guess > secretNumber) {
     if (score > 1) {
       //only do the items below when score is over 0
@@ -139,11 +339,15 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
       ).textContent = `📈 Too High... Try Again!`;
       score--; //decrease the score by one, now need to display it:
       document.querySelector(`.score`).textContent = score; //displays the new score
+
+      //When score runs out on too high
     } else {
       document.querySelector(
         `.message`
       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
     }
+
+    //WHen guess is too low
   } else if (guess < secretNumber) {
     if (score > 1) {
       document.querySelector(
@@ -151,10 +355,24 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
       ).textContent = `📉 Too Low... Try Again!`;
       score--; //decrease the score by one
       document.querySelector(`.score`).textContent = score; //displays the new score
+
+      //when player loses with score too low
     } else {
       document.querySelector(
         `.message`
       ).textContent = `Game Over! 🎲 Better Luck Next Time!`;
     }
   }
+});
+
+// //THIS WORKS!
+document.querySelector(`.again`).addEventListener(`click`, function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20 + 1);
+  document.querySelector(`.message`).textContent = `Start guessing...`;
+  document.querySelector(`.score`).textContent = score; //I forgot this part. Thought the score= took care of the reset.
+  document.querySelector(`body`).style.backgroundColor = `#222`;
+  document.querySelector(`.number`).style.width = `15rem`;
+  document.querySelector(`.number`).textContent = `?`;
+  document.querySelector(`.guess`).value = ``;
 });
