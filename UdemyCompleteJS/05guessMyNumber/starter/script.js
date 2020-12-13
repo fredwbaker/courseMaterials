@@ -450,6 +450,7 @@ let highestNumber = Number(
     `Type in the highest possible number (for example, 20, 200, 2000, etc.)`
   )
 );
+// let highestNumber = 10; //TODO: clear once testing is complete. Uncomment code above.
 
 let secretNumber = Math.trunc(Math.random() * highestNumber) + 1;
 // let secretNumber = Math.trunc(Math.random() * 20 + 1);//use for between 1 and 20
@@ -477,6 +478,7 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
   if (!guess) {
     // document.querySelector(`.message`).textContent = `⛔ Needs a Number!`;
     displayMessage(`⛔ Needs a Number!`);
+    // document.querySelector(`body`).style.backgroundColor = `#616b04`; //FIXME: turns bg yellow, but doesn't turn back off.
 
     //when player wins
   } else if (guess === secretNumber) {
@@ -501,7 +503,11 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
       document.querySelector('.score').textContent = score;
     } else {
       // document.querySelector('.message').textContent = `Game Over! 🎲 Better Luck Next Time!`;
-      displayMessage(`Game Over! 🎲 Better Luck Next Time!`);
+      displayMessage(
+        `Game Over!
+      🎲 Better Luck Next Time!`
+      );
+      document.querySelector(`body`).style.backgroundColor = `#851818`;
       document.querySelector('.score').textContent = 0;
     }
   }

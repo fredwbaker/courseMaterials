@@ -1,0 +1,35 @@
+<!-- This guess my number game is modified from a project in Jonas Schmedmann's Complete Javascript course on Udemy. I modified the color scheme, layout, behavior, and added several new elements, such as user prompted number inputs, color change upon losing, adaptive phrasing for some elements, and so on. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Can You Guess My Number?</title>
+  </head>
+  <body>
+    <header>
+      <h1>Can You Guess My Number?</h1>
+
+      <div class="number">?</div>
+    </header>
+    <main>
+      <section class="left">
+        <p class="between">My number is between 1 and ...</p>
+        <input type="number" class="guess" />
+        <button class="btn check">Check Your Guess!</button>
+      </section>
+      <section class="right">
+        <p class="message">Start Guessing...</p>
+        <p class="label-score">💯 Score: <span class="score">20</span></p>
+        <p class="label-highscore">
+          🥇 Highscore: <span class="highscore">0</span>
+        </p>
+        <button class="btn again">Start Again!</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
