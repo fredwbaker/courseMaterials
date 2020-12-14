@@ -1,6 +1,6 @@
 let highestNumber = Number(
   prompt(
-    `Type in the highest possible number (for example, 20, 200, 2000, etc.)`
+    `I will pick a number between one and (Type in the highest number in the range) ...`
   )
 );
 
@@ -57,7 +57,7 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
 document.querySelector(`.again`).addEventListener(`click`, function () {
   highestNumber = Number(
     prompt(
-      `Type in the highest possible number (for example, 20, 200, 2000, etc.)`
+      `I will pick a number between one and (Type in the highest number in the range) ...`
     )
   );
   score = 20;
