@@ -89,4 +89,6 @@ btnRoll.addEventListener(`click`, function () {
     currentScore = 0; //set current score to 0
   }
 });
-//I made the typing animation and pig game today, but github isn't recognizing the commit!
+//12/15/2020 I made the typing animation and pig game today, but github isn't recognizing the commit!
+
+//12/16/2020 test commit
