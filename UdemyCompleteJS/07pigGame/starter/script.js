@@ -89,3 +89,4 @@ btnRoll.addEventListener(`click`, function () {
     currentScore = 0; //set current score to 0
   }
 });
+//test
