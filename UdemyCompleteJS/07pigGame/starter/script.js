@@ -89,4 +89,4 @@ btnRoll.addEventListener(`click`, function () {
     currentScore = 0; //set current score to 0
   }
 });
-//test
+//I made the typing animation and pig game today, but github isn't recognizing the commit!
