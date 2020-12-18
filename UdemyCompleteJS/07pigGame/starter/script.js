@@ -218,11 +218,12 @@
 //   switchPlayer();
 // });
 
-//PHASE 5: Set win at 100:
+//PHASE 5: Set up New Game button:
 
+//Player elements
 const player0Element = document.querySelector(`.player--0`);
 const player1Element = document.querySelector(`.player--1`);
-
+//Score elements
 const score0Element = document.querySelector(`#score--0`);
 const score1Element = document.getElementById(`score--1`);
 const currentScore0 = document.getElementById(`current--0`);
@@ -234,18 +235,28 @@ const btnNew = document.querySelector(`.btn--new`);
 const btnRoll = document.querySelector(`.btn--roll`);
 const btnHold = document.querySelector(`.btn--hold`);
 
-//Score variable
-const scores = [0, 0];
-
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+let scores, currentScore, activePlayer, playing; //declaring empty variables in the global scope
 
 const reset = function () {
+  //Score variable
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
   //Game Elements starting condition
   score0Element.textContent = 0;
   score1Element.textContent = 0;
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  currentScore0.textContent = 0;
+  currentScore1.textContent = 0;
+
   diceElement.classList.add(`hidden`);
+  player0Element.classList.remove(`player--winner`);
+  player1Element.classList.remove(`player--winner`);
+  player1Element.classList.remove(`player--active`);
+  player0Element.classList.add(`player--active`);
 };
 
 reset();
@@ -291,14 +302,14 @@ btnHold.addEventListener(`click`, function () {
       scores[activePlayer];
 
     //check if player's score is >= 100
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 100) {
       //finish the game
       playing = false;
       diceElement.classList.add(`hidden`);
 
       document
         .querySelector(`.player--${activePlayer}`)
-        .classList.add(`.player--winner`);
+        .classList.add(`player--winner`);
       document
         .querySelector(`player--${activePlayer}`)
         .classList.remove(`player--active`);
@@ -309,10 +320,7 @@ btnHold.addEventListener(`click`, function () {
   }
 });
 
-// btnNew.addEventListener(`click`, function () {
-//   reset();
-//   // playing=true;
-// };
+btnNew.addEventListener(`click`, reset);
 
 //JONAS' Code:
 // 'use strict';
