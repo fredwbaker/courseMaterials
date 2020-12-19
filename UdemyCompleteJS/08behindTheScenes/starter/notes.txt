@@ -1,0 +1,40 @@
+
+//JAVASCRIPT Theory
+
+//high level languages (e.g., JS and Python) use abstractions to manage computer resources such as RAM. Low level languages, like C, require the programmer to ask the computer for these resources. This means JS programs will never work at the same level as C programs. JS Cleans the memory for us
+
+//JS is an interpreted, or just in time compiled language. All code needs to be in machine readable code (0s and 1s). With some languages, the code needs to be run through a compiler in order to convert, but JS is converted to machine code just in time. 
+
+//Multi-paradigm: 3 popular types of paradigms: procedural, object oriented, and functional programming. Can also be imperitive, or declarative. Many languages are ONLY one of these (procedural, object oriented, or functional), but JS can do all three. This makes it really powerful. 
+
+//JS is Prototype-based object oriented: Almost everything in JS is an object, except for primitive values, such as strings and numbers. Prototypal inheritence allows us to create a blueprint code that the children inherit (more on this later)
+
+//first-class functions: this means that functions are treated as regular variables, so we can use functions inside of functions, and return functions from a function. We can pass functions into other functions just like a variable. 
+
+//JS is a dynamic language. This means we don't assign data types to variables. They become known when we run our code, and they can be reassigned. Other languages are Strongly Typed languages, where variables are assigned a type and don't change. Typescript does this and is similar to JS. This may reduce bugs, but could also limit the language.
+
+//Single thread and non-blocking event loop model. What is a concurrency model? A fancy term talking about how the computer handles multiple things at once. JS runs on a SINGLE THREAD, which means it can only do one thing at a time. Therefore, we need a way to handle doing multiple things going on at once. So, long tasks, such as fetching data from a server, would take up time on the computer. We don't want this blocked, so JS has non-blocking behavior, which is done through an event loop. For long running tasks, these get executed in the background, and then reinserted into the main processes. 
+
+//THE JAVASCRIPT ENGINE
+
+//What is a JS engine? It is just the program that executes JAVASCRIPT code. Every browser has a JS engine. Google has the v8 Engine, which also runs Node. 
+
+//all engines have a Call Stack, and a Heap. The call stack is where our code is executed. The computer calls each thing to execute into this stack. The heap is where all the objects are stored in an unstructured way until they are needed. 
+
+//How is this compiled into machine code? 
+
+//2 methods of converting code into machine code: Compilation and interpretation. 
+//compiling code means ALL code is converted at once into a portable file that can be executed whenever. Any program on the computer has already been compiled, and will be executed when you use it. 
+//Interpreted is converted as it goes, line by line. 
+
+//JS USED to be a purely interpreted language, but that makes for a slow program. JS is now Just In Time compiled, which means that the whole code is compiled at once, and then executed immediately. This does not create a portable file that is executed later. This means JS is NO LONGER an interpreted language
+
+//JIT Compiling Process:
+//As code enters the engine, it first gets (1) parsed (read) through going into the (1a) Abstract Syntax Tree. This checks for keywords, like const or let, and then converts this into a tree that later frames the compilinig. It is then (2) compiled just in time. Then it is (3) executed in the call stack. 
+
+//This first creates a non-optimized code so it can initially run the code, and simultaneously optimizes the code as it works. As the code is optimized, the non-optimized code is then swept and replaced with the optimized code. 
+
+
+//JS Runtime. Runtime happens most often in the browser. Runtime is a big box that contains everything we need to run the program. This includes the (1) Engine (the heap and the call stack), (2) the Web APIs (DOM, Timers, Fetch APIs, console.log, etc. --these are things provided to the browser to run the code), and (3) the callback functions that handle events (click, timer, data). 
+
+//An example of a callback function is an event listener listening for a click. When the click happens, say the button is clicked, the callback function is called. This means it is put into the callback queue to be executed in the call stack. This process happens through the event loop. The event loop is how JS' non-blocking concurrency model happens.
