@@ -1,0 +1,22 @@
+/* ================================= 
+  Flexbox
+==================================== */
+
+.container {
+  display: flex;
+  min-height: 50vh;
+
+  /* one way to center the block vertically and horizontally */
+  /* justify-content: center;
+  align-items: center; */
+}
+
+/* this centers the block vertically, but not horizontally. It DOES center horizontally as well IF justify-content:center is left in the parent containers */
+/* .item {
+  align-self: center;
+} */
+
+/* this also centers the item vertically and horizontally */
+.item {
+  margin: auto;
+}

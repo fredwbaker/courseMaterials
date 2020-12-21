@@ -1,0 +1,78 @@
+/* ================================= 
+  Flexbox
+==================================== */
+/* 
+.container {
+	display: flex;
+} */
+
+/* can change the direction and even reverse the order */
+
+/* default value is row */
+/* .container {
+  display: flex;
+  /* flex-direction: row-reverse; */
+/*flex-direction: column;
+  /* flex-direction: column-reverse; */
+/*} */
+
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+  /* this makes it wrap when vertical space is limited: */
+/* flex-direction: column;
+  height: 280px; */
+/* } */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; /*sets the space between items, but NOT between the wall and outside objects */
+  /* justify-content: space-around; /*sets the space between items, AND between the wall and outside objects */
+}
+
+/* Target the first item in the .container */
+/* 
+.item-1 {
+  margin-right: auto;
+} */
+
+/* This makes the layout  */
+/* .item-3 {
+  margin-right: auto;
+} */
+
+/* We can change the order of items as well */
+
+/* default order for all flex-items is 0, so anything lower than 0 makes it first, anything higher than 0 makes it last */
+/* .item-6 {
+  order: -1;
+}
+
+.item-1 {
+  order: 1;
+}
+
+.item-2 {
+  order: 2;
+} */
+
+/* can control where the items in a column or nav are. Good for highlighting something on mobile that is less important on desktop */
+/* .item-5 {
+  order: -1;
+}
+
+.item-1 {
+  order: -2;
+} */
+
+/* FLEX GROW makes items expand to take up the space in the flex-container: */
+
+/* .item {
+  flex-grow: 1;
+}
+
+/* The higher the flex-grow number, the more space the item gets */
+/* .item-3 {
+  flex-grow: 3;
+} */

@@ -1,0 +1,37 @@
+/* ================================= 
+  Flexbox
+==================================== */
+
+.container {
+  display: flex;
+  flex: ;
+  flex-wrap: wrap;
+  /* Adding below for flex cross axis */
+  height: 450px;
+  /* default value is stretch: */
+  /* align-items: flex-start; */
+  /* Can use flex-end, and flex-center */
+}
+
+.item-1 {
+  align-self: flex-end;
+}
+
+.item-4 {
+  align-self: flex-start;
+}
+
+.item {
+  /* flex-grow: 1;
+  /* flex-basis allows you to set the content evenly */
+  /* flex-basis: 100px; */
+
+  /* it is recommended that you use flex, rather than flex-grow, flex-basis, and flex-shrink. flex is shorthand for these */
+  /* The 2nd and 3rd values are optional. The 2nd value is the flex basis */
+  flex: 1 200px;
+}
+
+/* if you want one item to have more, you need to specify flex-grow, rather than flex */
+.item-2 {
+  flex-grow: 2;
+}

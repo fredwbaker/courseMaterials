@@ -1,0 +1,100 @@
+/******************************
+Flexbox Layout
+*******************************/
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox */
+
+/* display flex is the flexbox */
+.header,
+.nav {
+  display: flex;
+  /* Flex-direction determines the main axis. It could be row, or column. It changes to row in smaller screens @media */
+  flex-direction: column;
+}
+
+.header {
+  justify-content: space-between;
+}
+g
+.nav {
+  /* The flex: 1 means everything takes up the same amount of space */
+  flex: 1;
+  /* space around vs space between objects */
+  justify-content: space-around;
+}
+
+@media all and (min-width: 640px) {
+  .header,
+  .nav {
+    /* The flex-direction changes to row here */
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 1030px) {
+  .nav {
+    flex: none;
+  }
+}
+
+/******************************
+Additional Styling
+*******************************/
+
+body {
+  margin: 0;
+  font-family: Helvetica;
+  background: #5fcf80;
+}
+
+.header {
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.logo {
+  background: transparent url("../img/treehouse-white.svg") center center
+    no-repeat;
+  width: 195px;
+  background-size: contain;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nav {
+  list-style: none;
+}
+
+.nav li {
+  margin: 12px 0 12px 28px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.nav li a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav li:last-child a {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  transition: 200ms ease-in-out;
+  padding: 8px 16px 7px;
+}
+
+.nav li:last-child a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+@media all and (min-width: 1030px) {
+  .header {
+    width: 1030px;
+    min-width: 768px;
+  }
+}

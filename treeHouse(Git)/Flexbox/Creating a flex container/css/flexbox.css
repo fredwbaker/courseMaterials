@@ -1,0 +1,11 @@
+/* ================================= 
+  Flexbox
+==================================== */
+
+/* currently, the item divs in the index.html are in the normal document flow. We are creating a flexbox container */
+
+/* this changed the items from a column to a row */
+.container {
+  display: flex;
+  height: 300px;
+}
