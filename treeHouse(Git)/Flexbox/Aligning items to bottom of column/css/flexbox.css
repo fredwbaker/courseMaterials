@@ -1,0 +1,52 @@
+/* ================================= 
+  Base Styles
+==================================== */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* this pushes the columns to the max, pushing the footer to the bottom */
+.row {
+  flex: 1;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+  .main-header,
+  .main-nav,
+  .row,
+  .col {
+    display: flex;
+  }
+
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col {
+    flex: 1;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+  }
+
+  /* Makes buttons on the bottom, but leaves content at top */
+  .button {
+    margin-top: auto;
+    /* aligns buttons to right side of column. Left side is flex-start */
+    align-self: flex-end;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

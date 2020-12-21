@@ -1,0 +1,37 @@
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+  /* makes the main header and main nav into flex rows */
+  .main-header,
+  .main-nav {
+    display: flex;
+  }
+
+  /* makes the logo and nav sit on separate rows */
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .col {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Moves logo to left and adds space to the right */
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .primary {
+    flex: 2;
+  }
+}
