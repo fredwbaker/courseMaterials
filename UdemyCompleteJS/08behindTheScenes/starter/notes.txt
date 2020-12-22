@@ -38,3 +38,46 @@
 //JS Runtime. Runtime happens most often in the browser. Runtime is a big box that contains everything we need to run the program. This includes the (1) Engine (the heap and the call stack), (2) the Web APIs (DOM, Timers, Fetch APIs, console.log, etc. --these are things provided to the browser to run the code), and (3) the callback functions that handle events (click, timer, data). 
 
 //An example of a callback function is an event listener listening for a click. When the click happens, say the button is clicked, the callback function is called. This means it is put into the callback queue to be executed in the call stack. This process happens through the event loop. The event loop is how JS' non-blocking concurrency model happens.
+
+
+
+//An execution context is how the code is executed. First, the top level code is executed, but the code inside of functions aren't executed until they are called. 
+
+/What is inside of an execution context?
+
+//1. The variable environment, which includes all variable declarations (let, const, var), functions, arguments objects
+//2. Scope chain -everything that is inside of the current context/Scope
+//3. this keyword
+
+Arrow functions DO NOT have the this keyword or the arguments object. This will be important to remember later.
+
+//The call stack in the JS engine is what keeps track of what functions were called first and where the engine is in running the code. 
+
+When code runs: 
+
+//1. a global execution context is created, and the code that is run goes into the call stack. 
+//2. when a function is called, it gets its own execution context (not global) and this is thrown into the call stack. if a 2nd function is called in the first function, the first function's execution context is paused. JS can only do one thing at a time (one thread of execution)
+
+//Once complete, the function leaves the call stack and the first function becomes the active execution context
+
+//SCOPE and the SCOPE chain
+
+//Each Execution Context has a 1. variable environment, 2. a scope chain, 3. a this keyword. 
+
+//Scoping: how a programs variables are organized and accessed. 
+//Lexical scoping: scoping is controlled by placement of functions and blocks in the code
+//Scope: Space or environment where a certain variable is declared. There is global scope, function scope, and block scope.
+Scope of a variable: region of code where a certain variable can be accessed
+
+
+//The block scope is everything inside of the {}. Only let and const variables (NOT var) are limited to the block scope
+//Function scope variables are only accessible within the function itself
+//Global scope: accessible anywhere and outside of functions.
+
+//Function scopes can access variables in the parent scope, so functions can pull the variables from the global scope, and functions nested inside of other functions can pull from the first function, etc. 
+
+//Outer scopes will NEVER have access to variables in an inner scope.
+
+//SCOPE CHAIN and the CALL Stack
+
+
