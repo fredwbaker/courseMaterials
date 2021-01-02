@@ -1,0 +1,6 @@
+/* Structural Pseudo-classes------------------ */
+
+div:nth-child(4) {
+  background: #52bab3;
+  color: white;
+}

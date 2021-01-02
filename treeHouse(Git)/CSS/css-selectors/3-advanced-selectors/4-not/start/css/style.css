@@ -1,0 +1,28 @@
+
+:root {
+  background: #e3effb;
+}
+
+:target {
+  background: #384047;
+  color: white;
+}
+
+#col-c:target {
+  background: #eff1f2;
+  color: initial;
+  box-shadow: 0 0 6px rgba(0,0,0, .2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

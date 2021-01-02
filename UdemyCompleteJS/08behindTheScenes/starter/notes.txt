@@ -78,6 +78,20 @@ Scope of a variable: region of code where a certain variable can be accessed
 
 //Outer scopes will NEVER have access to variables in an inner scope.
 
-//SCOPE CHAIN and the CALL Stack
+//SCOPE CHAIN and the CALL Stack 
+
+
+//lexical scoping means that the scoping is controlled by the placement of functions and blocks in the code. 
+
+//scope is the space or environment in which a certain variable is declared. 
+
+
+//there are 3 types of scope: Global, Function, and Block scope
+
+//GLOBAL scope results from top level code
+//FUNCTION (or local) scope lives within the function
+//the BLOCK scope is everything within {}, and these are only accessible inside. IMPORTANT: Only let and const variables are block scoped, var variables don't adhere to this!
+
+
 
 
