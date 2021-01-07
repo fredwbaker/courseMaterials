@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  100vh
+}
+
+/* universal text ----------------*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300;400;700&display=swap");
+
+h1,
+h6 {
+  font-family: "Ubuntu", sans-serif;
+}
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+/* SPLASH SCREEN--------------------- */
+
+/* Check this stuff: https://www.youtube.com/watch?v=2ak37WrbSDg&t=19s */
+.intro {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  transition: 1s;
+}
+
+.logo-header {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+.logo{
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.logo.active{
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.logo.fade{
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+/* HEADER ---------------------*/
+
+/* header{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80px; 
+} */
+
+.header {
+  /* position: absolute;*/
+  display: flex;
+  background: white;
+  width: 100%;
+  /* height: 20%; */
+}
+
+.header h1 {
+  /* left: 30%; */
+  justify-self: flex-start;
+  flex-wrap: wrap;
+  color: black;
+  font-size: 8em;
+  /* margin-left: 20%; */
+  /* height: 20vh; */
+}
+
+.profile {
+  justify-content: flex-start;
+  border-radius: 50%;
+  height: 15em;
+
+  /* position: relative; */
+  margin: 5% auto -4.6% 5%;
+  padding: 1.25em;
+  background: linear-gradient(to bottom, black 75%, white 25%);
+}
+
+/* Typing Effect------------------- */
+
+.container {
+  /* height: 100vh; */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.container h1 {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.container h1 span.typed-text {
+  font-weight: normal;
+  color: #dd7732;
+}
+.container h1 span.TypeCursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container h1 span.TypeCursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
+/* BODY--------------------------- */
+
+body {
+  /* border-top: 10px white solid; */
+  background: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  height: auto;
+  color: white;
+  width: 80%;
+  margin: 10% 0 0 0;
+}
+
+/* body h1,
+p {
+  color: white;
+} */
+
+body h1 {
+  margin: 2% 0 2% 20%;
+  flex: 1;
+}
+
+body p {
+  flex-wrap: wrap;
+  align-content:;
+  margin: 0 0 2% 5%;
+  flex: 20%;
+
+}
+
+/* FOOTER------------------- */
+footer {
+  display: flex;
+  align-self: flex-end;
+  /* position: absolute; */
+  /* bottom: 0; */
+  width: 100%;
+  height: 5%;
+  padding: .5% 0 .5% 0;
+  border-top: 1px solid white;
+  background: white;
+}
+
+footer h6 {
+  color: black;
+  font-size: 1.25em;
+  margin-left: 3%;
+}
+
+/* MEDIA Adjustments -------------------- */
+
+@media (max-width: 769px) {
+  .profile {
+    border-radius: 50%;
+    height: 20em;
+    position: relative;
+    margin: 3% auto 0 10%;
+    background: none;
+  }
+
+  /* typing effect media */
+  .container h1 {
+    font-size: 2rem;
+  }
+}

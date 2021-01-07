@@ -1,2 +1,30 @@
 /* Structural Pseudo-classes------------------ */
 
+/* selects the first child in the list. Good for nav menus */
+li:first-child {
+  background: #52bab3;
+  color: white;
+}
+
+/* selects the last child in the list */
+li:last-child {
+  /* background: #52bab3;
+  color: white; */
+  border: none;
+}
+
+/* selects any only children with no sibling elements. Only works on ONLY children, so if there is another element, it won't work */
+:only-child {
+  color: #52bab3;
+  font-size: 1.5em;
+}
+
+/* To highlight empty items */
+:empty {
+  background-color: tomato;
+}
+
+/* to be more specific. Same as above */
+li:empty {
+  background-color: tomato;
+}

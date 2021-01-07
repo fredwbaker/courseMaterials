@@ -1,1 +1,23 @@
 /* UI element states pseudo-classes ------------ */
+
+/* targets these fields when they receive the user focus (click inside of the field) */
+input:focus,
+textarea:focus {
+  border-color: #52bab3;
+}
+
+/* State selectors can target disabled fields that users can't provide input*/
+
+:disabled {
+  background: #ddd;
+}
+
+/* more specifically targets the input field. Same as above. */
+/* input:disabled {
+  background: #ddd;
+} */
+
+/* Makes the text next to the checkbox bold when the checkbox is checked. Also uses the ADJACENT SIBLING COMBINATOR + */
+input[type="checkbox"]:checked + label {
+  font-weight: bold;
+}
